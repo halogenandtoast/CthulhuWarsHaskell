@@ -1,0 +1,56 @@
+name:                CthulhuWars
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/CthulhuWars#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2019 Author name here
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     CthulhuWars.Game
+                     , CthulhuWars.Faction
+                     , CthulhuWars.GreatOldOne
+                     , CthulhuWars.Maps
+                     , CthulhuWars.Monster
+                     , CthulhuWars.Player
+                     , CthulhuWars.Region
+                     , CthulhuWars.Terror
+                     , CthulhuWars.Token
+  build-depends:       base >= 4.7 && < 5
+                     , containers
+                     , semigroups
+                     , tagged
+                     , text
+  default-language:    Haskell2010
+
+executable CthulhuWars
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , containers
+                     , CthulhuWars
+  default-language:    Haskell2010
+
+test-suite CthulhuWars-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , CthulhuWars
+                     , hspec
+                     , QuickCheck
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/CthulhuWars

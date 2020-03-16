@@ -1,0 +1,3 @@
+:set -isrc
+:set -Wall
+:load Main
